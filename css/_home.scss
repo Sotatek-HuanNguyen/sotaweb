@@ -19,6 +19,9 @@
                         width: 1px;
                         background-color: #e0e6eb;
                         transform: translateY(-50%);
+                        @media (max-width: 992px) {
+                            display: none;
+                        }
                     }
                 }
                 &:first-child{
@@ -70,6 +73,7 @@
 }
 // Banner
 .sota-banner{
+    z-index: 0;
     &-item{
         &::before{
             content: '';
@@ -173,8 +177,8 @@
         }
         &-bullet-active{
             -webkit-box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
--moz-box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
-box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
+            -moz-box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
+            box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
             &::before{
                 background-color: #b3cbdf;
             }
@@ -219,10 +223,12 @@ box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
                     margin-bottom: 0;
                 }
                 h4{
-                    font-size: 25px;
-                    line-height: 30px;
-                    color: #001742;
-                    margin-bottom: 0;
+                    span{
+                        font-size: 25px;
+                        line-height: 30px;
+                        color: #001742;
+                        margin-bottom: 0;
+                    }
                 }
                 span{
                     font-size: 12px;

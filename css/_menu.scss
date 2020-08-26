@@ -1,5 +1,7 @@
 
-
+a{
+    text-decoration: none;
+}
 $font-menu: Arial; /*font-family menu main*/
 // center menu
 @mixin center-menu{
@@ -29,6 +31,7 @@ $font-menu: Arial; /*font-family menu main*/
     padding: 10px 20px;
     font-size: 15px;
     color: #000;
+    text-decoration: none;
 }
 // end style menu con
 
@@ -42,7 +45,7 @@ $bg-hover-active-level-1: transparent;
 
 // màu và background khi hover menu con
 $color-hover-multi: #fff;
-$bg-hover-multi: green;
+$bg-hover-multi: #229fcc;
 $bg-multi: #ddd; /*background menu con*/
 // end màu và background khi menu con
 
