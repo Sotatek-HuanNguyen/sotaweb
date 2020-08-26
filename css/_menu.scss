@@ -1,0 +1,392 @@
+
+
+$font-menu: Arial; /*font-family menu main*/
+// center menu
+@mixin center-menu{
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+//end center menu
+
+// style menu cấp 1
+@mixin style-level-1 {
+    padding: 19px 20px;
+    font-size: 14px;
+    color: #0d0d0d;
+}
+// end style menu cấp 1
+
+// style menu con
+@mixin style-level-multi {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #000;
+}
+// end style menu con
+
+$icon-level-1: "\eac8";
+$color-icon-level-1: #000;
+
+// màu và background khi hover và active menu cấp 1
+$color-hover-active-level-1: blue;
+$bg-hover-active-level-1: transparent;
+// end màu và background khi hover và active menu cấp 1
+
+// màu và background khi hover menu con
+$color-hover-multi: #fff;
+$bg-hover-multi: green;
+$bg-multi: #ddd; /*background menu con*/
+// end màu và background khi menu con
+
+$bg-active-mobile: #333;
+
+@mixin style-menu-mobile{
+
+  display: block;
+  color: #000;
+  font-size: 15px;
+  padding: 7px 15px;
+}
+
+
+@media (max-width: 991px) {
+    .overlay {
+        position: fixed;
+        z-index: 9;
+        display: none;
+        background: rgba(0, 0, 0, 0.6);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+    }
+}
+
+.logo_mb{
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 60px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    max-width: 70%;
+    width: 100%;
+    margin: auto;
+    padding: 5px;
+}
+.img_logo_mb{
+    max-height: 100%;
+    max-width: 100%
+}
+.menu_mb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
+  height: 60px;
+  background: #fff;
+  border-bottom: 1px solid #ebebeb;
+    @media (min-width: 992px) {
+        display: none;
+    }
+
+    .nav-toggle {
+        line-height: 1;
+        display: inline-block;
+        padding: 2px;
+        border: 0;
+        background-color: transparent;
+        right: 0;
+        width: 45px;
+        height: 60px;
+        position: fixed;
+        z-index: 99;
+        outline: none;
+
+        span {
+            position: relative;
+            margin: auto;
+            display: block;
+            width: 25px;
+            height: 2px;
+            -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            background-color: #000;
+
+            &::before, &::after {
+                content: '';
+                top: -7px;
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                background-color: #000;
+                -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            }
+
+            &::after {
+                top: inherit;
+                bottom: -7px;
+            }
+        }
+
+        &.is-active {
+            span {
+                background: transparent;
+
+                &::before {
+                    -webkit-transform: translateY(7px) translateX(0) rotate(45deg);
+                    -webkit-transform: translateY(7px) translateX(0) rotate(45deg);
+                    transform: translateY(7px) translateX(0) rotate(45deg);
+                    background: #000;
+                }
+
+                &::after {
+                    -webkit-transform: translateY(-7px) translateX(0) rotate(-45deg);
+                    transform: translateY(-7px) translateX(0) rotate(-45deg);
+                    background: #000;
+                }
+            }
+        }
+    }
+}
+
+
+
+.nav-dropdown {
+    display: none;
+
+    @media (min-width: 992px) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 215px;
+        z-index: 10;
+        visibility: hidden;
+    }
+}
+
+.has-dropdown {
+    cursor: pointer;
+
+    &::after {
+        padding-top: 0px;
+        font-size: 16px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        content: $icon-level-1;
+        font-family: "IcoFont";
+        color: #000;
+        line-height: 39px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        display: none;
+        @media (min-width: 992px) {
+            position: absolute;
+            top: 50%;
+            color: $color-icon-level-1;
+            bottom: inherit;
+            right: 5px;
+            width: 10px;
+            height: 10px;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            line-height: 10px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        &.is-active::after {
+            -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+            color: #fff;
+        }
+    }
+
+    > a {
+        display: inline-block !important;
+    }
+
+    @media (min-width: 992px) {
+        &:hover {
+            > .nav-dropdown {
+                display: block;
+                visibility: visible;
+            }
+
+            &::after {
+                color: $color-hover-active-level-1;
+            }
+        }
+
+        &.active::after {
+            color: $color-hover-active-level-1;
+        }
+
+        .has-dropdown {
+            &::after {
+                content: "\f105";
+                -webkit-transition: all 0s;
+                transition: all 0s;
+                width: 20px;
+            }
+
+            &:hover::after {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.mainMenu {
+    &__nav {
+      @media (min-width: 992px){
+        position: relative;
+        z-index: 1;
+      }
+        .mainMenu__navCont {
+            background: #fff;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            z-index: 9999;
+            overflow-y: auto;
+            width: 300px;
+            max-width: 70%;
+            height: 100%;
+            min-height: 100%;
+            -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+            -webkit-overflow-scrolling: touch;
+            @media (max-width: 991px){
+              padding-bottom: 100px;
+            }
+            &.is-visible {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+
+            li {
+                position: relative;
+                border-top: 1px solid #ebebeb;
+                &:first-child{
+                  border-top: 0;
+                }
+
+                @media (min-width: 992px) {
+                    float: left;
+                    border-top: 0;
+
+                    &.active, &:hover {
+                        background: $bg-hover-active-level-1;
+
+                        > a {
+                            color: $color-hover-active-level-1;
+                        }
+                    }
+                }
+
+                a {
+                    font-family: $font-menu;
+                    @include style-menu-mobile;
+                }
+
+                @media (max-width: 991px) {
+                    &.is-active {
+                        background: $bg-active-mobile;
+
+                        > a {
+                            color: #fff !important;
+                        }
+                    }
+                }
+
+                .nav-dropdown {
+                    background: #f3f3f3;
+
+                    @media (min-width: 992px) {
+                        background: $bg-multi;
+                    }
+
+                    li {
+                        padding-left: 10px;
+
+                        @media (min-width: 992px) {
+                            padding-left: 0;
+                            float: none;
+
+                            &:hover {
+                                background: $bg-hover-multi;
+
+                                > a {
+                                    color: $color-hover-multi;
+                                }
+                            }
+                        }
+
+                        a {
+                            @include style-level-multi;
+                        }
+
+                        .nav-dropdown {
+                            background: #e3e3e3;
+                            left: 100%;
+                            top: 0;
+
+                            @media (min-width: 992px) {
+                                background: $bg-multi;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media (min-width: 992px) {
+                position: unset;
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                min-height: 0;
+                overflow-y: visible;
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                // @include center-menu;
+                > li {
+                    > a {
+                        @include style-level-1;
+                    }
+                }
+            }
+        }
+    }
+}
