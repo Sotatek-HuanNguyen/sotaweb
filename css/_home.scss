@@ -341,8 +341,19 @@
                     left: 12.65823%;
                 }
                 .item-2{
-                    top: 29.23977%;
-                    left: 45.6621%;
+                    top: 26.23977%;
+                    left: 38%;
+                    flex-flow: row-reverse;
+                    .name{
+                        margin-left: 0;
+                        margin-right: 8px;
+                        &::before{
+                            left: auto;
+                            right: -8px;
+                            border-right: none;
+                            border-left: 8px solid #1a3168;
+                        }
+                    }
                 }
                 .item-3{
                     top: 37.73585%;
@@ -367,8 +378,8 @@
                     left: 85.3971%;
                 }
                 .item-6{
-                    top: 58.82353%;
-                    left: 74.79432%;
+                    top: 60%;
+                    left: 75%;
                 }
                 .item-7{
                     top: 81.96721%;
@@ -430,24 +441,53 @@
                     left: 80%;
                 }
                 .item-11{
-                    top: 20%;
-                    left: 17%;
+                    top: 44.5%;
+                    left: 71%;
+                    flex-flow: row-reverse;
+                    .name{
+                        margin-left: 0;
+                        margin-right: 8px;
+                        &::before{
+                            left: auto;
+                            right: -8px;
+                            border-right: none;
+                            border-left: 8px solid #1a3168;
+                        }
+                    }
                 }
                 .item-12{
-                    top: 20%;
-                    left: 17%;
+                    top: 30%;
+                    left: 50%;
                 }
                 .item-13{
-                    top: 20%;
-                    left: 17%;
+                    top: 34%;
+                    left: 40%;
+                    flex-flow: row-reverse;
+                    .name{
+                        margin-left: 0;
+                        margin-right: 8px;
+                        &::before{
+                            left: auto;
+                            right: -8px;
+                            border-right: none;
+                            border-left: 8px solid #1a3168;
+                        }
+                    }
                 }
                 .item-14{
-                    top: 20%;
-                    left: 17%;
-                }
-                .item-15{
-                    top: 20%;
-                    left: 17%;
+                    top: 58.3%;
+                    left: 66.5%;
+                    flex-flow: row-reverse;
+                    .name{
+                        margin-left: 0;
+                        margin-right: 8px;
+                        &::before{
+                            left: auto;
+                            right: -8px;
+                            border-right: none;
+                            border-left: 8px solid #1a3168;
+                        }
+                    }
                 }
             }
         }
