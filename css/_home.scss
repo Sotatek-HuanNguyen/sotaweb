@@ -1,5 +1,6 @@
 .sota-container{
     .mainMenu{
+        margin-left: auto;
         ul{
             margin: 0;
             padding: 0;
@@ -7,9 +8,14 @@
             li{
                 .nav-link{
                     color: #333333;
-                    font-size: 14px;
-                    font-family: SVN-Gilroy-Light;
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    font-family: SVN-Gilroy-Medium;
                     position: relative;
+                    @media (max-width: 1200px) {
+                        font-size: 12px;
+                        padding: 21px 20px;
+                    }
                     &::before{
                         content: '';
                         position: absolute;
@@ -22,6 +28,11 @@
                         @media (max-width: 992px) {
                             display: none;
                         }
+                    }
+                    &:hover{
+                        color: #229fcc;
+                        text-shadow: 0 0 0.5px #229fcc;
+                        transition: ease-in-out 0.2s;
                     }
                 }
                 &:first-child{
@@ -71,24 +82,45 @@
         }
     }
 }
+.sota-wrap{
+    position: relative;
+    #particles-js{
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: rgb(26, 49, 104);
+        background-image: url('');
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+    .wrap-slider{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
 // Banner
 .sota-banner{
     z-index: 0;
+    height: 100%;
     &-item{
-        &::before{
-            content: '';
-            display: block;
-            padding-bottom: 30%;
-            @media (max-width: 1200px) {
-                padding-bottom: 50%;
-            }
-            @media (max-width: 480px) {
-                padding-bottom: 100%;
-            }
-        }
+        height: 100%;
+        // &::before{
+        //     content: '';
+        //     display: block;
+        //     padding-bottom: 100%;
+        //     @media (max-width: 1200px) {
+        //         padding-bottom: 50%;
+        //     }
+        //     @media (max-width: 480px) {
+        //         padding-bottom: 100%;
+        //     }
+        // }
         img{
-            display: block;
-            position: absolute;
+            // display: block;
+            // position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
@@ -103,7 +135,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            max-width: 610px;
+            max-width: 800px;
             @media (max-width: 767px) {
                 top: auto;
                 bottom: 50px;
@@ -113,7 +145,7 @@
             h2{
                 font-family: SVN-Gilroy-Light;
                 color: white;
-                font-size: 45px;
+                font-size: 60px;
                 line-height: 55px;
                 letter-spacing: -0.5px;
                 margin-bottom: 15px;
@@ -176,12 +208,18 @@
             }
         }
         &-bullet-active{
-            -webkit-box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
-            -moz-box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
-            box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
+            // -webkit-box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
+            // -moz-box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
+            // box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
             &::before{
                 background-color: #b3cbdf;
             }
+            border-style: solid;
+            border-width: 2px;
+            border-color: white;
+            // border-image-source: linear-gradient(to left, #229fcc, #e0e6eb 50%);
+            border-image-slice: 1;
+            border-radius: 50%;
         }
     }
 }
@@ -190,13 +228,16 @@
         font-family: SVN-Gilroy-Medium;
         font-size: 30px;
         color: #001742;
+        @media (max-width: 768px) {
+            font-size: 25px;
+        }
     }
     h6{
         color: #475b87;
         font-family: SVN-Gilroy-Medium;
-        font-size: 15px;
+        font-size: 20px;
         line-height: 25px;
-        margin-bottom: 0;
+        margin-bottom: 10px;
     }
 }
 .sota-map{
@@ -380,6 +421,34 @@
                         }
                     }
                 }
+                .item-9{
+                    top: 20%;
+                    left: 17%;
+                }
+                .item-10{
+                    top: 48%;
+                    left: 80%;
+                }
+                .item-11{
+                    top: 20%;
+                    left: 17%;
+                }
+                .item-12{
+                    top: 20%;
+                    left: 17%;
+                }
+                .item-13{
+                    top: 20%;
+                    left: 17%;
+                }
+                .item-14{
+                    top: 20%;
+                    left: 17%;
+                }
+                .item-15{
+                    top: 20%;
+                    left: 17%;
+                }
             }
         }
     }
@@ -419,17 +488,519 @@
 .btn-sota-larrow{
     background-color: #229fcc;
     font-size: 13px;
-    line-height: 28px;
+    line-height: 26px;
     font-family: SVN-Gilroy-Bold;
     color: white;
     padding-left: 20px;
     padding-right: 15px;
+    outline: none;
+    box-shadow: none;
     img{
         width: 14px;
         height: 7px;
-        margin-left: 17px;
+        margin-left: 5px;
+        vertical-align: baseline;
+        transition: ease-out 0.2s;
+    }
+    @media (max-width: 767px) {
+        line-height: 20px;
+    }
+    &:hover{
+        color: white;
+        img{
+            margin-left: 17px;
+            transition: ease-in 0.2s;
+        }
     }
 }
 .services{
+    background-color: #e1e8f5;
+    padding: 60px 0 60px;
+    @media (max-width: 767px) {
+        padding: 30px 0 30px;
+    }
+    .sevices-item{
+        margin-bottom: 40px;
+        @media (max-width: 767px) {
+            padding-left: 30px;
+        }
+        h4{
+            position: relative;
+            font-size: 20px;
+            line-height: 30px;
+            @media (max-width: 768px) {
+                font-size: 17px;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                left: -30px;
+                top: 0;
+                width: 22px;
+                height: 26px;
+                background: url('../images/Services.svg');
+            }
+        }
+        p{
+            font-size: 12px;
+            color: #475b87;
+            line-height: 18px;
+            margin-bottom: 0;
+        }
+    }
+}
+.sota-tech{
+    padding-top: 80px;
+    @media (max-width: 992px) {
+        padding-top: 50px;
+    }
+}
+.sota-work{
+    background-color: #001742;
+    padding: 80px 0 130px;
+    .sota-head{
+        margin-bottom: 40px;
+        h3,
+        h6{
+            color: white;
+        }
+    }
+    .btn-sota-larrow{
+        margin-top: 35px;
+    }
+    .section-slider{
+        .work-next,
+        .work-prev{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            outline: none;
+            box-shadow: none;
+            &::after{
+                display: none;
+            }
+            svg{
+                path{
+                    fill: white;
+                }
+            }
+        }
+        .work-next{
+            right: -80px;
+        }
+        .work-prev{
+            left: -80px;
+        }
+        .swiper-work{
+            .swiper-slide{
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .swiper-pagination{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -80px;
+            &-bullet{
+                width: 27px;
+                height: 27px;
+                background-color: transparent;
+                position: relative;
+                outline: none;
+                cursor: pointer;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 7px;
+                    height: 7px;
+                    top: 50%;
+                    left: 50%;
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: #b3cbdf;
+                }
+            }
+            &-bullet-active{
+                // -webkit-box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
+                // -moz-box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
+                // box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
+                &::before{
+                    background-color: #b3cbdf;
+                }
+                border-style: solid;
+                border-width: 2px;
+                border-color: white;
+                // border-image-source: linear-gradient(to left, #229fcc, #e0e6eb 50%);
+                border-image-slice: 1;
+            }
+        }
+    }
+}
 
+.sota-aboutus{
+    position: relative;
+    padding: 80px 0 60px;
+    background-color:#e1e8f5;
+    overflow: hidden;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 45.5%;
+        background-color:#e1e8f5;
+        z-index: 2;
+    }
+    .swiper-aboutus{
+        height: 100%;
+    }
+    .client-item{
+        display: flex;
+        flex-wrap: wrap;
+        background-color: white;
+        padding: 40px 20px 20px;
+        height: 100%;
+        align-content: space-between;
+        .head{
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            .avt{
+                margin-right: 10px;
+                a{
+                    display: block;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+            .inf{
+                h6{
+                    margin: 0;
+                    a{
+                        font-family: SVN-Gilroy-Medium;
+                        font-size: 20px;
+                        line-height: 30px;
+                        color: #001742;
+                    }
+                }
+                span{
+                    font-family: SVN-Gilroy-Light;
+                    color:#475b87;
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+            }
+        }
+        .content{
+            font-size: 14px;
+            font-family: SVN-Gilroy-Light;
+            color: #475b87;
+            line-height: 24px;
+            margin-bottom: 45px;
+        }
+        .date{
+            font-family: SVN-Gilroy-Light;
+            color:#475b87;
+            font-size: 12px;
+            line-height: 18px;
+            margin-top: auto;
+        }
+    }
+    .swiper-aboutus{
+        overflow: inherit;
+        // .swiper-slide{
+        //     opacity: 0.3;
+        //     transition: ease-in-out 0.2s;
+        // }
+        // .swiper-slide-next,
+        // .swiper-slide-active{
+        //     opacity: 1;
+        //     transition: ease-in-out 0.2s;
+        // }
+    }
+    .swiper-pagination{
+        &-bullet{
+            width: 27px;
+            height: 27px;
+            background-color: transparent;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            box-shadow: none;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 7px;
+                height: 7px;
+                top: 50%;
+                left: 50%;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #b3cbdf;
+            }
+        }
+        &-bullet-active{
+            // -webkit-box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
+            // -moz-box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
+            // box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
+            &::before{
+                background-color: #b3cbdf;
+            }
+            border-style: solid;
+            border-width: 2px;
+            border-image-source: linear-gradient(to left, #229fcc, #e0e6eb 50%);
+            // border-image-source: linear-gradient(to left, #229fcc, #e0e6eb 50%);
+            border-image-slice: 1;
+            border-radius: 50%;
+        }
+    }
+}
+.bg-fix{
+    background-color:#e1e8f5;
+    z-index: 2;
+}
+.sota-client{
+    padding: 80px 0 80px;
+    .sota-head{
+        h3{
+            max-width: 800px;
+            margin: auto;
+        }
+    }
+    .list-client{
+        display: flex;
+        flex-wrap: wrap;
+        &-item{
+            width: 20%;
+            height: 165px;
+            border-left: solid 1px #efefef;
+            border-bottom: solid 1px #efefef;
+            transition: all 0.2s;
+            a{
+                display: flex;
+                width: 100%;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                background-color: white;
+                z-index: 1;
+                img{
+                    filter: grayscale(100%);
+                    transition: all 0.2s;
+                }
+            }
+            &:hover{
+                z-index: 2;
+                box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.11);
+                transition: all 0.2s;
+                a{
+                    img{
+                        filter: grayscale(0%);
+                        transition: all 0.2s;
+                    }
+                }
+            }
+            &:first-child,
+            &:nth-child(6n){
+                border-left: none;
+            }
+            &:nth-child(n + 6){
+                border-bottom: none;
+            }
+        }
+    }
+}
+.sota-news{
+    padding: 60px 0 90px;
+    .news{
+        &-thumb{
+            margin-bottom: 22px;
+            overflow: hidden;
+            a{
+                display: block;
+                position: relative;
+                &::before{
+                    content: '';
+                    display: block;
+                    padding-bottom: 75%;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba($color: #000000, $alpha: 0.5);
+                    z-index: 1;
+                    transition: ease-in-out 0.2s;
+                }
+                img{
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    object-fit: cover;
+                    transition: ease-in-out 0.2s;
+                }
+            }
+        }
+        &-content{
+            &-name{
+                margin-bottom: 0;
+                a{
+                    text-decoration: none;
+                    font-family: SVN-Gilroy-Medium;
+                    font-size: 20px;
+                    line-height: 30px;
+                    color: #001742;
+                    transition: all 0.23s;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;  
+                    overflow: hidden;
+                    &:hover{
+                        color: #229dc9;
+                        transition: ease-in-out 0.23s;
+                    }
+                }
+            }
+            p{
+                font-family: SVN-Gilroy-Light;
+                font-size: 14px;
+                color: #475b87;
+            }
+        }
+        &:hover{
+            .news-thumb{
+                a{
+                    img{
+                        transform: scale(1.2);
+                        transition: ease-in-out 0.3s;
+                    }
+                    &::after{
+                        background-color: rgba($color: #000000, $alpha: 0);
+                        transition: ease-in-out 0.2s;
+                    }
+                }
+            }
+        }
+    }
+}
+.sotaft{
+    background-color: #001742;
+    .sota-cpr{
+        background-color: #000e27;
+        padding: 12px 0;
+    }
+    .sota-location{
+        iframe{
+            width: 100% !important;
+            height: 320px;
+            margin: 6px 0;
+            display: block;
+        }
+    }
+    .wdg-ft{
+        padding-top: 65px;
+        .logo{
+            a{
+                img{}
+            }
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li{
+                margin-bottom: 18px;
+                a{
+                    display: block;
+                    text-decoration: none;
+                    font-family: SVN-Gilroy-Medium;
+                    color: white;
+                    font-size: 15px;
+                    line-height: 25px;
+                    transition: ease-in-out 0.25s;
+                    &:hover{
+                        color: #229fcc;
+                        transition: ease-in-out 0.25s;
+                    }
+                }
+            }
+        }
+        .contact{
+            &-numb,
+            &-email{
+                margin-bottom: 15px;
+                display: block;
+                text-decoration: none;
+                font-size: 20px;
+                line-height: 30px;
+                color: #17a2b8;
+                font-family: SVN-Gilroy-Medium;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+            &-address{
+                font-size: 15px;
+                line-height: 25px;
+                color: white;
+                font-family: SVN-Gilroy-Medium;
+            }
+        }
+    }
+}
+.sota-social{
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        li{
+            margin-right: 13px;
+            display: block;
+            a{
+                display: block;
+                svg{
+                    display: block;
+                    circle,
+                    path{
+                        fill: gray;
+                    }
+                }
+                .svgs{
+                    path{
+                        fill: #000e27 !important
+                    }
+                }
+                &:hover{
+                    svg{
+                        circle,
+                        path{
+                            fill: #17a2b8;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

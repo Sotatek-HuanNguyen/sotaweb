@@ -2,7 +2,7 @@
 a{
     text-decoration: none;
 }
-$font-menu: Arial; /*font-family menu main*/
+$font-menu: SVN-Gilroy-Light; /*font-family menu main*/
 // center menu
 @mixin center-menu{
   display: -ms-flex;
@@ -20,17 +20,18 @@ $font-menu: Arial; /*font-family menu main*/
 
 // style menu cấp 1
 @mixin style-level-1 {
-    padding: 19px 20px;
+    padding: 20px 23px;
     font-size: 14px;
     color: #0d0d0d;
+    transition: ease-in-out 0.2s;
 }
 // end style menu cấp 1
 
 // style menu con
 @mixin style-level-multi {
     padding: 10px 20px;
-    font-size: 15px;
-    color: #000;
+    font-size: 14px;
+    color: #0d0d0d;
     text-decoration: none;
 }
 // end style menu con
@@ -244,7 +245,9 @@ $bg-active-mobile: #333;
                 display: block;
                 visibility: visible;
             }
-
+            .nav-link{
+                color: #229fcc !important;
+            }
             &::after {
                 color: $color-hover-active-level-1;
             }
