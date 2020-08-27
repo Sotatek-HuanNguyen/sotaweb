@@ -224,12 +224,19 @@
     }
 }
 .sota-head{
+    @media (max-width: 767px) {
+        text-align: center;
+    }
     h3{
         font-family: SVN-Gilroy-Medium;
         font-size: 30px;
         color: #001742;
         @media (max-width: 768px) {
             font-size: 25px;
+        }
+        @media (max-width: 576px) {
+            font-size: 18px;
+            line-height: 28px;
         }
     }
     h6{
@@ -238,10 +245,17 @@
         font-size: 20px;
         line-height: 25px;
         margin-bottom: 10px;
+        @media (max-width: 576px) {
+            font-size: 12px;
+            line-height: 20px;
+        }
     }
 }
 .sota-map{
     padding: 100px 0 95px;
+    @media (max-width: 767px) {
+        padding: 40px 0;
+    }
     .sota-head{
         max-width: 780px;
         margin: auto;
@@ -252,28 +266,49 @@
         left: 0;
         transform: translateY(-50%);
         background-color: #e1e8f5;
-        padding: 33px 20px;
+        padding: 13px 20px;
         z-index: 3;
+        @media (max-width: 767px) {
+            position: static;
+            transform: translateY(0);
+            margin-bottom: 15px;
+        }
         ul{
             margin: 0;
             padding: 0;
             list-style: none;
+            @media (max-width: 767px) {
+               display: flex;
+               flex-wrap: wrap;
+               justify-content: space-around;
+            }
             li{
                 margin-bottom: 30px;
+                @media (max-width: 767px) {
+                    margin-bottom: 0;
+                 }
                 &:last-child{
                     margin-bottom: 0;
                 }
                 h4{
+                    margin-bottom: 0;
                     span{
                         font-size: 25px;
                         line-height: 30px;
                         color: #001742;
                         margin-bottom: 0;
+                        @media (max-width: 767px) {
+                            font-size: 20px;
+                         }
                     }
                 }
                 span{
                     font-size: 12px;
+                    line-height: 14px;
                     color: #475b87;
+                    @media (max-width: 767px) {
+                        font-size: 10px;
+                     }
                 }
             }
         }
@@ -560,9 +595,17 @@
         padding: 30px 0 30px;
     }
     .sevices-item{
+        position: relative;
         margin-bottom: 40px;
-        @media (max-width: 767px) {
-            padding-left: 30px;
+        
+        .icon{
+            position: absolute;
+            left: -30px;
+            top: 0;
+            @media (max-width: 767px) {
+                position: static;
+                text-align: center;
+            }
         }
         h4{
             position: relative;
@@ -571,21 +614,21 @@
             @media (max-width: 768px) {
                 font-size: 17px;
             }
-            &::before{
-                content: '';
-                position: absolute;
-                left: -30px;
-                top: 0;
-                width: 22px;
-                height: 26px;
-                background: url('../images/Services.svg');
+            @media (max-width: 767px) {
+                text-align: center;
             }
+            
         }
         p{
             font-size: 12px;
             color: #475b87;
             line-height: 18px;
             margin-bottom: 0;
+            @media (max-width: 767px) {
+                text-align: center;
+                max-width: 250px;
+                margin:  auto;
+            }
         }
     }
 }
@@ -594,10 +637,16 @@
     @media (max-width: 992px) {
         padding-top: 50px;
     }
+    @media (max-width: 767px) {
+        padding-top: 40px;
+    }
 }
 .sota-work{
     background-color: #001742;
     padding: 80px 0 130px;
+    @media (max-width: 992px) {
+        padding: 40px 0 80px;
+    }
     .sota-head{
         margin-bottom: 40px;
         h3,
@@ -607,6 +656,12 @@
     }
     .btn-sota-larrow{
         margin-top: 35px;
+        @media (max-width: 767px) {
+            margin-top: 0;
+            margin-bottom: 35px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
     .section-slider{
         .work-next,
@@ -629,6 +684,9 @@
                     fill: white;
                 }
             }
+            @media (max-width: 991px) {
+                display: none;
+            }
         }
         .work-next{
             right: -80px;
@@ -647,7 +705,7 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            bottom: -80px;
+            bottom: -60px;
             &-bullet{
                 width: 27px;
                 height: 27px;
@@ -698,6 +756,12 @@
         width: 45.5%;
         background-color:#e1e8f5;
         z-index: 2;
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+    .sota-head{
+        text-align: center;
     }
     .swiper-aboutus{
         height: 100%;
@@ -774,6 +838,11 @@
         // }
     }
     .swiper-pagination{
+        @media (max-width: 767px) {
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
         &-bullet{
             width: 27px;
             height: 27px;
@@ -813,6 +882,9 @@
 .bg-fix{
     background-color:#e1e8f5;
     z-index: 2;
+    @media (max-width: 767px) {
+        position: static;
+    }
 }
 .sota-client{
     padding: 80px 0 80px;
@@ -867,7 +939,17 @@
 }
 .sota-news{
     padding: 60px 0 90px;
+    @media (max-width: 767px) {
+        padding: 60px 0;
+    }
+    .sota-head{
+        margin-bottom: 40px;
+    }
     .news{
+        @media (max-width: 767px) {
+            margin-bottom: 30px;
+            text-align: center;
+        }
         &-thumb{
             margin-bottom: 22px;
             overflow: hidden;
@@ -920,12 +1002,19 @@
                         color: #229dc9;
                         transition: ease-in-out 0.23s;
                     }
+                    @media (max-width: 767px) {
+                        font-size: 18px;
+                    }
                 }
             }
             p{
                 font-family: SVN-Gilroy-Light;
                 font-size: 14px;
+                line-height: 20px;
                 color: #475b87;
+                @media (max-width: 767px) {
+                    font-size: 12px;
+                }
             }
         }
         &:hover{
@@ -946,9 +1035,28 @@
 }
 .sotaft{
     background-color: #001742;
+    @media (max-width: 767px) {
+        padding-top: 20px;
+    }
+    .container{
+        @media (max-width: 767px) {
+            max-width: 100%;
+        }
+    }
     .sota-cpr{
         background-color: #000e27;
         padding: 12px 0;
+    }
+    .two{
+        @media (max-width: 767px) {
+            order: 4
+        }
+    }
+    .four{
+        @media (max-width: 767px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
     .sota-location{
         iframe{
@@ -960,15 +1068,22 @@
     }
     .wdg-ft{
         padding-top: 65px;
-        .logo{
-            a{
-                img{}
+        @media (max-width: 767px) {
+            padding-top: 21px;
+        }
+        .logo-ft{
+            @media (max-width: 767px) {
+                text-align: center;
             }
         }
         ul{
             margin: 0;
             padding: 0;
             list-style: none;
+            @media (max-width: 767px) {
+                display: flex;
+                justify-content: center;
+            }
             li{
                 margin-bottom: 18px;
                 a{
@@ -979,6 +1094,11 @@
                     font-size: 15px;
                     line-height: 25px;
                     transition: ease-in-out 0.25s;
+                    @media (max-width: 767px) {
+                        font-size: 12px;
+                        font-family: SVN-Gilroy-Light;
+                        padding: 5px 6px;
+                    }
                     &:hover{
                         color: #229fcc;
                         transition: ease-in-out 0.25s;
@@ -987,6 +1107,9 @@
             }
         }
         .contact{
+            @media (max-width: 767px) {
+                text-align:  center;
+            }
             &-numb,
             &-email{
                 margin-bottom: 15px;
@@ -999,12 +1122,19 @@
                 &:hover{
                     text-decoration: underline;
                 }
+                @media (max-width: 767px) {
+                    margin-bottom: 10px;
+                }
             }
             &-address{
                 font-size: 15px;
                 line-height: 25px;
                 color: white;
                 font-family: SVN-Gilroy-Medium;
+                @media (max-width: 767px) {
+                    font-size: 14px;
+                    font-family: SVN-Gilroy-Light;
+                }
             }
         }
     }
@@ -1015,6 +1145,9 @@
         padding: 0;
         list-style: none;
         display: flex;
+        @media (max-width: 767px) {
+            justify-content: center;
+        }
         li{
             margin-right: 13px;
             display: block;
@@ -1042,5 +1175,16 @@
                 }
             }
         }
+    }
+}
+.cpr{
+    text-align: right;
+    color: white;
+    font-size: 12px;
+    line-height: 18px;
+    font-family: SVN-Gilroy-Light;
+    margin-bottom: 0;
+    @media (max-width: 767px) {
+        display: none;
     }
 }
