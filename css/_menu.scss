@@ -50,7 +50,7 @@ $bg-hover-multi: #229fcc;
 $bg-multi: #ddd; /*background menu con*/
 // end màu và background khi menu con
 
-$bg-active-mobile: #333;
+$bg-active-mobile: #00194a;
 
 @mixin style-menu-mobile{
 
@@ -195,7 +195,6 @@ $bg-active-mobile: #333;
 
 .has-dropdown {
     cursor: pointer;
-
     &::after {
         padding-top: 0px;
         font-size: 16px;
@@ -212,7 +211,6 @@ $bg-active-mobile: #333;
         text-align: center;
         -webkit-transition: all 0.3s;
         transition: all 0.3s;
-        display: none;
         @media (min-width: 992px) {
             position: absolute;
             top: 50%;
@@ -224,6 +222,7 @@ $bg-active-mobile: #333;
             -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
             line-height: 10px;
+            display: none;
         }
     }
 
@@ -282,24 +281,23 @@ $bg-active-mobile: #333;
             background: #fff;
             position: fixed;
             top: 60px;
-            left: 0;
+            left: -270px;
             z-index: 9999;
             overflow-y: auto;
-            width: 300px;
-            max-width: 70%;
+            width: 270px;
             height: 100%;
             min-height: 100%;
             -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
             transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-            -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
             -webkit-overflow-scrolling: touch;
             @media (max-width: 991px){
               padding-bottom: 100px;
             }
             &.is-visible {
-                -webkit-transform: translateX(0);
-                transform: translateX(0);
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
             }
 
             li {
@@ -345,7 +343,7 @@ $bg-active-mobile: #333;
                     }
 
                     li {
-                        padding-left: 10px;
+                        padding-left: 2px;
 
                         @media (min-width: 992px) {
                             padding-left: 0;

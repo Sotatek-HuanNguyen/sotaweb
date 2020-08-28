@@ -22,3 +22,49 @@
     padding-right: 10px;
     padding-left: 10px;
 }
+
+@mixin sota-swp($bg) {
+    &-bullet{
+        outline: none;
+        width: 27px;
+        height: 27px;
+        background-color: transparent;
+        position: relative;
+        cursor: pointer;
+        $border: 2px;
+        background: $bg;
+        background-clip: padding-box; /* !importanté */
+        border: solid $border transparent; /* !importanté */
+        border-radius: 50%;
+        
+        &::before{
+            content: '';
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #b3cbdf;
+        }
+    }
+    &-bullet-active{
+        // -webkit-box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
+        // -moz-box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
+        // box-shadow: inset 2px 0px 9px 0px rgba(34,159,204,1);
+        $border: 2px;
+        &::before{
+            background-color: #b3cbdf;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -$border; /* !importanté */
+            border-radius: inherit; /* !importanté */
+            background: linear-gradient(to right, white, #229fcc);
+          }
+    }
+}
