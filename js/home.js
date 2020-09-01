@@ -1,58 +1,78 @@
-(function($, app) {
+var swiperBanner = new Swiper('.sota-banner', {
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+//     on: {
+//     slideChange: function () {
+//     // let index_currentSlide = instance_swiper.realIndex,
+//     // currentSlide = instance_swiper.slides[index_currentSlide]
+//     //
+//     console.log('index_currentSlide');
+//     // currentSlide.style.background = "red";
+//     },
+// }
+});
+// swiperBanner.on('slideNextTransitionStart', function () {
+// 	console.log('slide changed');
+// });
+// swiperBanner.slideActiveClass({
 
-    var homeCls = function() {
+// })
+var swiperWork = new Swiper('.swiper-work', {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    pagination: {
+        el: '.pagination-work',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.work-next',
+        prevEl: '.work-prev',
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+        },
+    }
+});
+var swiperAboutus = new Swiper('.swiper-aboutus', {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    pagination: {
+        el: '.pagination-aboutus',
+        clickable: true,
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+    }
+});
+var swiperClient = new Swiper('.swiper-client', {
+    slidesPerView: 2,
+    slidesPerColumn: 2,
+    spaceBetween: 0,
+    slidesPerGroup: 2,
+    pagination: {
+        el: '.pagination-client',
+        clickable: true,
+    },
+});
 
-        this.run = function() {
-            this.init();
-            this.bindEvents();
-        };
-
-        this.init = function() {
-
-        };
-
-        this.bindEvents = function() {
-            initSliderBanner();
-            initCount();
-        };
-
-        this.resize = function() {
-
-        };
-
-        var initSliderBanner = function() {
-            var swiper = new Swiper('.sota-banner', {
-                pagination: {
-                  el: '.swiper-pagination',
-                },
-              });
-        };
-
-        var initCount = function(){
-            $('.counter-count').each(function () {
-                $(this).prop('Counter',0).animate({
-                    Counter: $(this).text()
-                }, {
-                  
-                  //chnage count up speed here
-                    duration: 4000,
-                    easing: 'swing',
-                    step: function (now) {
-                        $(this).text(Math.ceil(now));
-                    }
-                });
-            });
-        }
-
-    };
-
-
-    $(document).ready(function() {
-        var homeObj = new homeCls();
-        homeObj.run();
-        // On resize
-        $(window).resize(function() {
-            homeObj.resize();
-        });
+$(function() {
+    $('a[data-modal]').on('click', function() {
+    $($(this).data('modal')).modal();
+    return false;
     });
-}(jQuery, $.app));
+});
