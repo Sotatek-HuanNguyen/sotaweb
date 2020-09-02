@@ -3,6 +3,7 @@ var swiperBanner = new Swiper('.sota-banner', {
         el: '.swiper-pagination',
         clickable: true,
     },
+    speed: 2000,
 //     on: {
 //     slideChange: function () {
 //     // let index_currentSlide = instance_swiper.realIndex,
@@ -13,12 +14,14 @@ var swiperBanner = new Swiper('.sota-banner', {
 //     },
 // }
 });
-// swiperBanner.on('slideNextTransitionStart', function () {
-// 	console.log('slide changed');
-// });
-// swiperBanner.slideActiveClass({
+swiperBanner.on('slideNextTransitionStart', function () {
+    $('.fxRollX.swiper-slide-active').addClass('navOutNext');
+});
+swiperBanner.on('slideNextTransitionEnd', function () {
+    $('.fxRollX').removeClass('navOutNext');
+});
 
-// })
+
 var swiperWork = new Swiper('.swiper-work', {
     slidesPerView: 3,
     spaceBetween: 10,
