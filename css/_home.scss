@@ -6,6 +6,43 @@
 .align-item-center{
     align-items: center;
 }
+.bg-fix{
+    background-color:#e1e8f5;
+    z-index: 2;
+    @media (max-width: 767px) {
+        position: static;
+    }
+}
+.btn-sota-larrow{
+    background-color: #239ECA;
+    font-size: 14px;
+    line-height: 26px;
+    font-family: SVN-Gilroy-Light;
+    color: white;
+    padding-left: 20px;
+    padding-right: 15px;
+    outline: none;
+    box-shadow: none;
+    transition: ease-in 0.2s;
+    img{
+        width: 14px;
+        height: 7px;
+        margin-left: 5px;
+        vertical-align: baseline;
+        transition: ease-out 0.2s;
+    }
+    @media (max-width: 767px) {
+        line-height: 20px;
+    }
+    &:hover{
+        color: white;
+        text-shadow: 0 0 2px white;
+        img{
+            margin-left: 17px;
+            transition: ease-in 0.2s;
+        }
+    }
+}
 .sota-container{
     .mainMenu{
         margin-left: auto;
@@ -64,6 +101,9 @@
 }
 .header{
     background-color: white;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     &-contact{
         background-color: #239ECA;
     }
@@ -545,68 +585,6 @@
         }
     }
 }
-
-@-webkit-keyframes animate {
-	0% {
-		-webkit-transform: scale(.5);
-		transform: scale(.5);
-		opacity: 0
-	}
-	50% {
-		opacity: 1
-	}
-	to {
-		-webkit-transform: scale(1.2);
-		transform: scale(1.2);
-		opacity: 1
-	}
-}
-
-@keyframes animate {
-	0% {
-		-webkit-transform: scale(.5);
-		transform: scale(.5);
-		opacity: 0
-	}
-	50% {
-		opacity: 1
-	}
-	to {
-		-webkit-transform: scale(1.2);
-		transform: scale(1.2);
-		opacity: 1
-	}
-}
-.btn-sota-larrow{
-    background-color: #239ECA;
-    font-size: 14px;
-    line-height: 26px;
-    font-family: SVN-Gilroy-Light;
-    color: white;
-    padding-left: 20px;
-    padding-right: 15px;
-    outline: none;
-    box-shadow: none;
-    transition: ease-in 0.2s;
-    img{
-        width: 14px;
-        height: 7px;
-        margin-left: 5px;
-        vertical-align: baseline;
-        transition: ease-out 0.2s;
-    }
-    @media (max-width: 767px) {
-        line-height: 20px;
-    }
-    &:hover{
-        color: white;
-        text-shadow: 0 0 2px white;
-        img{
-            margin-left: 17px;
-            transition: ease-in 0.2s;
-        }
-    }
-}
 .services{
     background-color: #e1e8f5;
     padding: 60px 0 60px;
@@ -717,6 +695,7 @@
             cursor: pointer;
             outline: none;
             box-shadow: none;
+            background-image: none;
             &::after{
                 display: none;
             }
@@ -757,12 +736,14 @@
         }
     }
 }
-
 .sota-aboutus{
     position: relative;
     padding: 80px 0 60px;
     background-color:#e1e8f5;
     overflow: hidden;
+    @media (max-width: 767px) {
+        padding: 40px 0 40px;
+    }
     &::before{
         content: '';
         position: absolute;
@@ -909,13 +890,6 @@
         }
     }
 }
-.bg-fix{
-    background-color:#e1e8f5;
-    z-index: 2;
-    @media (max-width: 767px) {
-        position: static;
-    }
-}
 .sota-client{
     position: relative;
     padding: 80px 0 80px;
@@ -937,6 +911,9 @@
             border-left: solid 1px #efefef;
             border-bottom: solid 1px #efefef;
             transition: all 0.2s;
+            @media (max-width: 576px) {
+                height: 70px;
+            }
             a{
                 display: flex;
                 width: 100%;
